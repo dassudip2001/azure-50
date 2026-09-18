@@ -688,29 +688,7 @@ you explicitly configured it that way.
 
 ------------------------------------------------------------------------
 
-# 27. Final checklist
-
-Use this checklist before completing the lab:
-
--   [ ] Existing resource group used
--   [ ] VM name is `xfusion-vm`
--   [ ] Region is `South Central US`
--   [ ] Image is Ubuntu 24.04 LTS
--   [ ] VM size is `Standard_B1s`
--   [ ] NSG is attached
--   [ ] Inbound SSH/TCP 22 is allowed
--   [ ] OS disk is Standard HDD
--   [ ] 30 GB data disk is attached
--   [ ] Data disk is Standard HDD
--   [ ] Remaining settings are default
--   [ ] VM has a public IP
--   [ ] SSH connection works
--   [ ] `hostname` returns `xfusion-vm`
--   [ ] Ubuntu version is 24.04
-
-------------------------------------------------------------------------
-
-# 28. Command reference
+# 27. Command reference
 
 ## Generate SSH key
 
@@ -760,42 +738,6 @@ sudo systemctl is-active ssh
 lsblk
 ```
 
-------------------------------------------------------------------------
-
-# 29. Final expected state
-
-The completed Azure VM should look like:
-
-``` text
-xfusion-vm
-│
-├── Resource Group
-│   └── Existing lab resource group
-│
-├── Region
-│   └── South Central US
-│
-├── Image
-│   └── Ubuntu 24.04 LTS
-│
-├── Size
-│   └── Standard_B1s
-│
-├── Network
-│   ├── Public IP
-│   └── NSG
-│       └── Allow SSH TCP/22
-│
-├── Storage
-│   ├── OS Disk
-│   │   └── Standard HDD
-│   └── Data Disk
-│       ├── 30 GB
-│       └── Standard HDD
-│
-└── SSH
-    └── Working
-```
 
 ## Completion test
 
