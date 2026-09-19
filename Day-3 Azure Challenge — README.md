@@ -353,22 +353,6 @@ az vm show   --resource-group "$RG"   --name datacenter-vm   --show-details   --
 ```
 
 ---
-
-# Final Checklist
-
-Before completing the task, confirm:
-
-- [ ] `datacenter-vm` exists.
-- [ ] VM is in resource group `kml_rg_main-969f3a6e65d2421d`.
-- [ ] Region is `eastus`.
-- [ ] Image is Ubuntu 22.04 (`Ubuntu2204`).
-- [ ] Size is `Standard_B2s`.
-- [ ] Admin username is `azureuser`.
-- [ ] SSH keys were generated/configured.
-- [ ] Storage SKU is `Standard_LRS`.
-- [ ] OS disk is `30 GB`.
-- [ ] VM power state is `VM running`.
-
 ## Final Expected Configuration
 
 ```text
