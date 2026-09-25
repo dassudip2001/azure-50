@@ -106,8 +106,4 @@ The exact LUN may be different if Azure selected another available LUN.
 - [ ] VM initialization has completed
 - [ ] Changes have been saved
 
-## Important
 
-Do **not** create a new managed disk. The task requires attaching the **existing** `datacenter-disk`.
-
-Once `datacenter-disk` is visible under the VM's **Data disks** section and VM initialization is complete, the task is ready for submission.
