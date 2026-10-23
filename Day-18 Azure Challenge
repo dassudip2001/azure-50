@@ -1,0 +1,90 @@
+# Day 18: Copy Data to an Azure Blob Storage Container
+
+## 📌 Overview
+As part of my Azure Cloud and DevOps learning journey, I completed Day 18 by uploading a local file to an existing Azure Blob Storage container using the Azure CLI.
+
+## 🎯 Objective
+Copy the file `/tmp/datacenter.txt` to the Blob container `datacenter-blob-702157687` in the storage account `datacenterst702157687`.
+
+## 🛠️ Azure Resources
+
+- **Cloud Provider:** Microsoft Azure
+- **Service:** Azure Blob Storage
+- **Storage Account:** `datacenterst702157687`
+- **Region:** `centralus`
+- **Container:** `datacenter-blob-702157687`
+- **Source File:** `/tmp/datacenter.txt`
+- **Destination Blob:** `datacenter.txt`
+
+## 🚀 Implementation Steps
+
+### 1. Verify the Source File
+
+```bash
+ls -l /tmp/datacenter.txt
+```
+
+Confirmed that the source file exists before uploading.
+
+### 2. Verify the Storage Account
+
+```bash
+az storage account show \
+  --name datacenterst702157687 \
+  --query "{name:name,location:location}" \
+  --output table
+```
+
+### 3. Upload the File
+
+Authenticate with an authorized Azure identity or storage account key, then run:
+
+```bash
+az storage blob upload \
+  --account-name datacenterst702157687 \
+  --account-key "$STORAGE_ACCOUNT_KEY" \
+  --container-name datacenter-blob-702157687 \
+  --name datacenter.txt \
+  --file /tmp/datacenter.txt \
+  --overwrite
+```
+
+> **Security:** Set `STORAGE_ACCOUNT_KEY` securely in your shell. Never commit credentials, passwords, or client secrets to a Git repository.
+
+### 4. Verify the Uploaded Blob
+
+```bash
+az storage blob exists \
+  --account-name datacenterst702157687 \
+  --account-key "$STORAGE_ACCOUNT_KEY" \
+  --container-name datacenter-blob-702157687 \
+  --name datacenter.txt \
+  --query exists \
+  --output tsv
+```
+
+Expected output after a successful upload:
+
+```text
+true
+```
+
+## 🧠 Key Learnings
+
+- Working with Azure Blob Storage containers.
+- Uploading local files using Azure CLI.
+- Understanding authentication with Microsoft Entra ID and storage account keys.
+- Troubleshooting Azure Storage data-plane permission errors.
+- Verifying uploaded blobs using Azure CLI.
+
+## ✅ Outcome
+
+The objective is to copy `datacenter.txt` from the local filesystem into the existing Azure Blob Storage container. Confirm successful completion by verifying that the blob exists in the destination container.
+
+## 📅 Challenge Progress
+
+**Day 18 — Azure Blob Storage**
+
+Continuing to build practical cloud, infrastructure, and DevOps skills through hands-on labs.
+
+#100DaysOfCloud #Azure #AzureBlobStorage #AzureCLI #CloudComputing #DevOps #LearningInPublic
