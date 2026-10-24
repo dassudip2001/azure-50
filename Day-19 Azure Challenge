@@ -1,0 +1,64 @@
+# Day 19: Convert Public Azure Blob Container to Private
+
+## 📌 Overview
+As part of my **#50DaysOfAzure challenge**, I learned how to change an Azure Blob Storage container's access level from public to private using the Azure Portal.
+
+Making a container private prevents anonymous users from accessing its blobs, helping protect sensitive data and improve storage security.
+
+## 🎯 Objectives
+- Identify a publicly accessible Azure Blob container.
+- Change the container's access level to **Private (no anonymous access)**.
+- Verify that public access is disabled.
+- Leave the existing private container unchanged.
+
+## 🛠️ Azure Resources
+
+| Setting | Value |
+|---|---|
+| Service | Azure Blob Storage |
+| Storage Account | `devopsst290718360` |
+| Region | `centralus` |
+| Container to Update | `devops-container-290718360` |
+| Existing Private Container | `devops-priv-290718360` |
+| Target Access Level | Private |
+
+## 🚀 Steps Performed
+
+1. Logged in to the [Azure Portal](https://portal.azure.com).
+2. Opened **Storage accounts** and selected `devopsst290718360`.
+3. Navigated to **Data storage → Containers**.
+4. Selected `devops-container-290718360`.
+5. Opened the **Change access level** option.
+6. Selected **Private (no anonymous access)**.
+7. Saved the changes.
+8. Verified that the container's access level was set to **Private**.
+9. Left `devops-priv-290718360` unchanged.
+
+## 🔐 Why Private Access Matters
+
+- Prevents anonymous public access to blobs.
+- Helps protect confidential files and business data.
+- Supports the principle of least privilege.
+- Reduces the risk of accidental data exposure.
+
+**Note:** Private container access does not prevent authorized users or applications from accessing blobs through properly authenticated requests. Storage account settings and authorization policies must also be configured securely.
+
+## ✅ Expected Result
+
+| Container | Final Access Level |
+|---|---|
+| `devops-container-290718360` | Private |
+| `devops-priv-290718360` | Unchanged (Private) |
+
+## 📚 Key Learnings
+
+- How to manage Azure Blob Storage container access levels.
+- How to disable anonymous public access.
+- The importance of securing cloud storage resources.
+- How to verify storage access configurations through the Azure Portal.
+
+## 🏁 Conclusion
+
+Successfully practiced changing an Azure Blob Storage container from public to private using the Azure Portal. This exercise reinforced the importance of controlling access to cloud storage and protecting data from unauthorized public access.
+
+#50DaysOfAzure #Azure #AzureBlobStorage #CloudSecurity #MicrosoftAzure #DevOps #LearningInPublic
